@@ -1,20 +1,14 @@
 version: 2
 jobs:
   build:
-    branches:
-        only:
-          - master
-
+    
     docker:
-      - image: debian:stretch
-
+      - image: tiangolo/uwsgi-nginx-flask:python3.6
     steps:
       - checkout
 
       - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
+          command: |
+            pip install flask_cors
+            pip install pytest 
+            py.test
