@@ -9,7 +9,6 @@ from app import cors
 
 @app.route("/api/")
 def root():
-    print(0)
     return jsonify({"message": "Hello World"})
 
 if __name__ == "__main__":
