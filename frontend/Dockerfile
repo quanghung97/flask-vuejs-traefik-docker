@@ -1,5 +1,5 @@
 # Stage 0, "build-stage", based on Node.js, to build and compile the frontend
-FROM tiangolo/node-frontend:10 as build-stage
+FROM node:10-alpine as build-stage
 
 WORKDIR /app
 
@@ -24,4 +24,4 @@ FROM nginx:1.15
 
 COPY --from=build-stage /app/dist/ /usr/share/nginx/html
 
-COPY --from=build-stage /nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
