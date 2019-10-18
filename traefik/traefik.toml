@@ -15,6 +15,9 @@ address = ":8080"
   [entryPoints.https]
   address = ":443"
     [entryPoints.https.tls]
+      [[entryPoints.https.tls.certificates]]
+      certFile = "/ssl.crt"
+      keyFile = "/ssl.key"
 
 # Enable ACME (Let's Encrypt): automatic SSL
 [acme]
