@@ -1,6 +1,12 @@
 # Running a Flask application backend + frontend over HTTPS with traefik and Let's Encrypt
 
-modified: traefik/traefik.toml
+may be to need run certificate in folder `certs`
+
+```
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ssl.key -out ssl.crt
+```
+
+modified: traefik/traefik.toml and .env in folder `frontend`
 change to your domain
 ```
 domain = "service.test"
